@@ -6,6 +6,7 @@ const escalationText = document.getElementById("escalationText");
 
 const escalationMessages = [
   "Hmm… interesting choice 👀",
+  "Common now ;)",
   "Are you sure though?",
   "Last chance 😌"
 ];
