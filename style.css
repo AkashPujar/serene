@@ -13,7 +13,9 @@ body {
   align-items: center;
   justify-content: center;
   color: #fff;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+
 }
 
 /* Floating cinematic card */
