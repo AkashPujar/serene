@@ -5,7 +5,7 @@ const yesBox = document.getElementById("yesBox");
 const escalationText = document.getElementById("escalationText");
 
 const escalationMessages = [
-  "Hmm… interesting choice 👀",
+  "Hmmm…interesting choice 👀",
   "Common now ;)",
   "Are you sure though?",
   "Last chance 😌"
@@ -72,14 +72,20 @@ function updateConfetti() {
 // Hearts
 function startHearts() {
   if (window.innerWidth > 768) return;
+
+  const emojis = ["❤️", "🌺","✨", "🌹"];
+
   const interval = setInterval(() => {
     const heart = document.createElement("div");
     heart.className = "heart";
-    heart.textContent = "❤️";
+    heart.textContent = emojis[Math.floor(Math.random() * emojis.length)];
     heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = Math.random() * 20 + 20 + "px";
+    heart.style.fontSize = Math.random() * 18 + 20 + "px";
+    heart.style.opacity = Math.random() * 0.5 + 0.5;
+
     document.body.appendChild(heart);
     setTimeout(() => heart.remove(), 4000);
   }, 300);
+
   setTimeout(() => clearInterval(interval), 6000);
 }
