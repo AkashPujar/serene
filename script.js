@@ -5,7 +5,7 @@ const yesBox = document.getElementById("yesBox");
 const escalationText = document.getElementById("escalationText");
 
 const escalationMessages = [
-  "Hmmm…interesting choice 👀",
+  "Hmmm… interesting choice 👀",
   "C’mon now ;)",
   "Are you sure though?",
   "Last chance 😌"
@@ -13,6 +13,7 @@ const escalationMessages = [
 
 let noAttempts = 0;
 
+// NO button runs away + emotional escalation
 noBtn.addEventListener("mouseover", () => {
   const container = document.querySelector(".buttons");
   const maxX = container.offsetWidth - noBtn.offsetWidth;
@@ -27,8 +28,7 @@ noBtn.addEventListener("mouseover", () => {
   }
 });
 
-const playBtn = document.getElementById("playSongBtn");
-
+// YES click
 yesBtn.addEventListener("click", () => {
   if (navigator.vibrate) {
     navigator.vibrate([200, 100, 200]);
@@ -37,30 +37,17 @@ yesBtn.addEventListener("click", () => {
   questionBox.classList.add("hidden");
   yesBox.classList.remove("hidden");
 
-  playBtn.classList.remove("hidden");
-
-  startConfetti();
-  startHearts();
-});
-
-playBtn.addEventListener("click", () => {
-  window.open(
-    "https://www.youtube.com/watch?v=6dOwHzCHfgA",
-    "_blank"
-  );
-});
-
   startConfetti();
   startHearts();
 });
 
 
-
-// Confetti
+// 🎉 Confetti
 const canvas = document.getElementById("confetti");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+
 let pieces = [];
 
 function startConfetti() {
@@ -88,11 +75,12 @@ function updateConfetti() {
   requestAnimationFrame(updateConfetti);
 }
 
-// Hearts
+
+// 💖 Floating hearts (mobile-only)
 function startHearts() {
   if (window.innerWidth > 768) return;
 
-  const emojis = ["❤️", "🌺","✨", "🌹"];
+  const emojis = ["❤️", "🌺", "✨", "🌹"];
 
   const interval = setInterval(() => {
     const heart = document.createElement("div");
