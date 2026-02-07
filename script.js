@@ -35,10 +35,14 @@ yesBtn.addEventListener("click", () => {
   questionBox.classList.add("hidden");
   yesBox.classList.remove("hidden");
 
-  const audio = document.getElementById("lovePreview");
-  audio.volume = 0.8;
-  audio.play().catch(() => {
-    console.log("Autoplay blocked on this browser");
+  // 🎶 Play preview dynamically (browser-safe)
+  const audio = new Audio(
+    "https://p.scdn.co/mp3-preview/6e8bdb6f45e6b9d5b3c2e4d2df6b2c45e0f44c8f"
+  );
+  audio.volume = 0.9;
+
+  audio.play().catch(err => {
+    console.log("Audio blocked or unavailable", err);
   });
 
   startConfetti();
