@@ -27,6 +27,8 @@ noBtn.addEventListener("mouseover", () => {
   }
 });
 
+const playBtn = document.getElementById("playSongBtn");
+
 yesBtn.addEventListener("click", () => {
   if (navigator.vibrate) {
     navigator.vibrate([200, 100, 200]);
@@ -35,10 +37,18 @@ yesBtn.addEventListener("click", () => {
   questionBox.classList.add("hidden");
   yesBox.classList.remove("hidden");
 
-  // 🎶 Play song via YouTube (no UI)
-document.getElementById("ytPlayer").src =
-  "https://www.youtube.com/embed/6dOwHzCHfgA?autoplay=1&mute=1&controls=0&modestbranding=1";
+  playBtn.classList.remove("hidden");
 
+  startConfetti();
+  startHearts();
+});
+
+playBtn.addEventListener("click", () => {
+  window.open(
+    "https://www.youtube.com/watch?v=6dOwHzCHfgA",
+    "_blank"
+  );
+});
 
   startConfetti();
   startHearts();
