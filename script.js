@@ -31,11 +31,16 @@ yesBtn.addEventListener("click", () => {
   if (navigator.vibrate) {
     navigator.vibrate([200, 100, 200]);
   }
+
   questionBox.classList.add("hidden");
   yesBox.classList.remove("hidden");
+
+  document.getElementById("loveSong").style.display = "block";
+
   startConfetti();
   startHearts();
 });
+
 
 // Confetti
 const canvas = document.getElementById("confetti");
