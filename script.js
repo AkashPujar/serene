@@ -6,7 +6,7 @@ const escalationText = document.getElementById("escalationText");
 
 const escalationMessages = [
   "Hmmm…interesting choice 👀",
-  "Common now ;)",
+  "C’mon now ;)",
   "Are you sure though?",
   "Last chance 😌"
 ];
@@ -35,19 +35,15 @@ yesBtn.addEventListener("click", () => {
   questionBox.classList.add("hidden");
   yesBox.classList.remove("hidden");
 
-  // 🎶 Play preview dynamically (browser-safe)
-  const audio = new Audio(
-    "https://p.scdn.co/mp3-preview/6e8bdb6f45e6b9d5b3c2e4d2df6b2c45e0f44c8f"
-  );
-  audio.volume = 0.9;
+  // 🎶 Play song via YouTube (no UI)
+document.getElementById("ytPlayer").src =
+  "https://www.youtube.com/embed/6dOwHzCHfgA?autoplay=1&mute=1&controls=0&modestbranding=1";
 
-  audio.play().catch(err => {
-    console.log("Audio blocked or unavailable", err);
-  });
 
   startConfetti();
   startHearts();
 });
+
 
 
 // Confetti
