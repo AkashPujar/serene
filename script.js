@@ -35,7 +35,11 @@ yesBtn.addEventListener("click", () => {
   questionBox.classList.add("hidden");
   yesBox.classList.remove("hidden");
 
-  document.getElementById("loveSong").style.display = "block";
+  const audio = document.getElementById("lovePreview");
+  audio.volume = 0.8;
+  audio.play().catch(() => {
+    console.log("Autoplay blocked on this browser");
+  });
 
   startConfetti();
   startHearts();

@@ -39,17 +39,12 @@
   <script src="script.js"></script>
 
   <!-- Music (hidden until YES) -->
-  <iframe
-          id="loveSong"
-          src="https://open.spotify.com/embed/track/2G7V7zsVDxg1yRsu7Ew9RJ?utm_source=generator"
-          width="300"
-          height="80"
-          frameborder="0"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-          style="display:none; margin-top:20px; border-radius:12px;">
-  </iframe>
-
+  <!-- 30s audio preview (no UI) -->
+  <audio id="lovePreview" preload="auto">
+      <source
+              src="https://p.scdn.co/mp3-preview/6e8bdb6f45e6b9d5b3c2e4d2df6b2c45e0f44c8f"
+              type="audio/mpeg">
+  </audio>
 
 </body>
 </html>
